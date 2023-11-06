@@ -1,4 +1,6 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.4.24;
+
+pragma experimental ABIEncoderV2;
 
 
 // Define a contract 'Supplychain'
@@ -292,16 +294,13 @@ function makeMusic(MusicInfo memory info) public {
   }
 
 
-  function fetchmusicBufferOne(uint _upc) public view returns 
+function fetchmusicBufferOnePartOne(uint _upc) public view returns 
 (
   uint    musicSKU,
   uint    musicUPC,
   address ownerID,
   address originArtistID,
-  string  originArtistName,
-  string  originArtistInformation,
-  string  originArtistCity,
-  string  originArtistNationality
+  string  originArtistName
 ) 
 {
   Music memory m = music[_upc];
@@ -310,24 +309,31 @@ function makeMusic(MusicInfo memory info) public {
     m.upc,
     m.ownerID,
     m.originArtistID,
-    m.originArtistName,
+    m.originArtistName
+  );
+}
+
+function fetchmusicBufferOnePartTwo(uint _upc) public view returns 
+(
+  string  originArtistInformation,
+  string  originArtistCity,
+  string  originArtistNationality
+) 
+{
+  Music memory m = music[_upc];
+  return (
     m.originArtistInformation,
     m.originArtistCity,
     m.originArtistNationality
   );
 }
-
-function fetchmusicBufferTwo(uint _upc) public view returns 
+function fetchmusicBufferTwoPartOne(uint _upc) public view returns 
 (
   uint    musicSKU,
   uint    musicUPC,
   uint    musicID,
   string  musicNotes,
-  uint    musicPrice,
-  uint    musicState,
-  address distributorID,
-  address recordLabelID,
-  address consumerID
+  uint    musicPrice
 ) 
 {
   Music memory m = music[_upc];
@@ -336,7 +342,20 @@ function fetchmusicBufferTwo(uint _upc) public view returns
     m.upc,
     m.musicID,
     m.musicNotes,
-    m.musicPrice,
+    m.musicPrice
+  );
+}
+
+function fetchmusicBufferTwoPartTwo(uint _upc) public view returns 
+(
+  uint    musicState,
+  address distributorID,
+  address recordLabelID,
+  address consumerID
+) 
+{
+  Music memory m = music[_upc];
+  return (
     uint(m.musicState),
     m.distributorID,
     m.recordLabelID,
