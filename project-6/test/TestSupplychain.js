@@ -7,17 +7,13 @@ contract('SupplyChain', function(accounts) {
     var sku = 1
     var upc = 1
     const ownerID = accounts[0]
-    const originFarmerID = accounts[1]
-    const originFarmName = "John Doe"
-    const originFarmInformation = "Yarray Valley"
-    const originFarmLatitude = "-38.239770"
-    const originFarmLongitude = "144.341490"
-    var productID = sku + upc
-    const productNotes = "Best beans for Espresso"
-    const productPrice = web3.toWei(1, "ether")
-    var itemState = 0
+    const originArtistID = accounts[1]
+    var musicID = sku + upc
+    const musicNotes = "Rema Feat Ice Spice"
+    const musicPrice = web3.toWei(1, "ether")
+    var musicState = 0
     const distributorID = accounts[2]
-    const retailerID = accounts[3]
+    const recordLabelID = accounts[3]
     const consumerID = accounts[4]
     const emptyAddress = '0x00000000000000000000000000000000000000'
 
@@ -36,205 +32,297 @@ contract('SupplyChain', function(accounts) {
 
     console.log("ganache-cli accounts used here...")
     console.log("Contract Owner: accounts[0] ", accounts[0])
-    console.log("Farmer: accounts[1] ", accounts[1])
+    console.log("Artist: accounts[1] ", accounts[1])
     console.log("Distributor: accounts[2] ", accounts[2])
-    console.log("Retailer: accounts[3] ", accounts[3])
+    console.log("Record Label: accounts[3] ", accounts[3])
     console.log("Consumer: accounts[4] ", accounts[4])
 
     // 1st Test
-    it("Testing smart contract function harvestItem() that allows a farmer to harvest coffee", async() => {
-        const supplyChain = await SupplyChain.deployed()
-        
+    it("Testing smart contract function makeMusic() that allows an artist to make music", async() => {
+         const supplyChain = await SupplyChain.deployed();
+
         // Declare and Initialize a variable for event
-        var eventEmitted = false
-        
-        // Watch the emitted event Harvested()
-        var event = supplyChain.Harvested()
+        let eventEmitted = false;
+
+        // Watch the emitted event Made()
+        const event = supplyChain.Made();
         await event.watch((err, res) => {
-            eventEmitted = true
-        })
+            eventEmitted = true;
+        });
 
-        // Mark an item as Harvested by calling function harvestItem()
-        await supplyChain.harvestItem(upc, originFarmerID, originFarmName, originFarmInformation, originFarmLatitude, originFarmLongitude, productNotes)
+        // Mark music as made by calling function makeMusic()
+        await supplyChain.makeMusic(upc, originArtistID, musicNotes);
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        const resultBufferOne = await supplyChain.fetchItemBufferOne.call(upc)
-        const resultBufferTwo = await supplyChain.fetchItemBufferTwo.call(upc)
+        // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartOne() and fetchmusicBufferOnePartTwo()
+        const musicBuffer = await supplyChain.fetchmusicBufferOnePartOne(upc);
+        const musicBuffer2 = await supplyChain.fetchmusicBufferOnePartTwo(upc);
+
 
         // Verify the result set
-        assert.equal(resultBufferOne[0], sku, 'Error: Invalid item SKU')
-        assert.equal(resultBufferOne[1], upc, 'Error: Invalid item UPC')
-        assert.equal(resultBufferOne[2], originFarmerID, 'Error: Missing or Invalid ownerID')
-        assert.equal(resultBufferOne[3], originFarmerID, 'Error: Missing or Invalid originFarmerID')
-        assert.equal(resultBufferOne[4], originFarmName, 'Error: Missing or Invalid originFarmName')
-        assert.equal(resultBufferOne[5], originFarmInformation, 'Error: Missing or Invalid originFarmInformation')
-        assert.equal(resultBufferOne[6], originFarmLatitude, 'Error: Missing or Invalid originFarmLatitude')
-        assert.equal(resultBufferOne[7], originFarmLongitude, 'Error: Missing or Invalid originFarmLongitude')
-        assert.equal(resultBufferTwo[5], 0, 'Error: Invalid item State')
-        assert.equal(eventEmitted, true, 'Invalid event emitted')        
-    })    
+        assert.equal(musicBuffer[0], sku + 1, "Error: Invalid SKU");
+        assert.equal(musicBuffer[1], upc, "Error: Invalid UPC");
+        assert.equal(musicBuffer[2], originArtistID, "Error: Invalid Owner ID");
+        assert.equal(musicBuffer[3], originArtistID, "Error: Invalid Origin Artist ID");
+        assert.equal(musicBuffer2[2], 0, "Error: Invalid Price");
+        assert.equal(musicBuffer2[3], musicState, "Error: Invalid state");
+        assert.equal(musicBuffer2[4], musicID, "Error: Invalid Origin Artist ID");
+        assert.equal(musicBuffer2[5], musicNotes, "Error: Invalid Origin Artist ID");
+
+        // Check if the event was emitted
+        assert.equal(eventEmitted, true, "Error: Event not emitted");
+    });  
 
     // 2nd Test
-    it("Testing smart contract function processItem() that allows a farmer to process coffee", async() => {
+    it("Testing smart contract function registerMusic() that allows an artist to register music", async() => {
         const supplyChain = await SupplyChain.deployed()
         
         // Declare and Initialize a variable for event
-        
+        let eventEmitted = false;
         
         // Watch the emitted event Processed()
-        
+        const event = supplyChain.Registered();
+        await event.watch((err, res) => {
+            eventEmitted = true;
+        });
 
-        // Mark an item as Processed by calling function processtItem()
-        
+        // Mark the music as Registered by calling function registerMusic()
+        await supplyChain.registerMusic(upc);
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartTwo()
+        const result = await supplyChain.fetchmusicBufferOnePartTwo(upc);
+
+        musicState++;
 
         // Verify the result set
+        assert.equal(result[3], musicState, "Error: Invalid state");
+
+        // Verify that the event was emitted
+        assert.equal(eventEmitted, true, "Event not emitted");
         
     })    
 
     // 3rd Test
-    it("Testing smart contract function packItem() that allows a farmer to pack coffee", async() => {
+    it("Testing smart contract function verifyMusic() that allows record labels to verify music", async() => {
         const supplyChain = await SupplyChain.deployed()
         
         // Declare and Initialize a variable for event
+        let eventEmitted = false;
         
-        
-        // Watch the emitted event Packed()
-        
+        // Watch the emitted event Processed()
+        const event = supplyChain.Verified();
+        await event.watch((err, res) => {
+            eventEmitted = true;
+        });
 
-        // Mark an item as Packed by calling function packItem()
-        
+        // Mark the music as Verified by calling function verifyMusic()
+        await supplyChain.verifyMusic(upc);
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartTwo()
+        const result = await supplyChain.fetchmusicBufferOnePartTwo(upc);
+
+        musicState++;
 
         // Verify the result set
+        assert.equal(result[3], musicState, "Error: Invalid state");
+
+        // Verify that the event was emitted
+        assert.equal(eventEmitted, true, "Event not emitted");
         
     })    
 
     // 4th Test
-    it("Testing smart contract function sellItem() that allows a farmer to sell coffee", async() => {
+    it("Testing smart contract function promoteMusic() that record labels to promote music", async() => {
         const supplyChain = await SupplyChain.deployed()
-        
+
         // Declare and Initialize a variable for event
-        
-        
-        // Watch the emitted event ForSale()
-        
+        let eventEmitted = false;
 
-        // Mark an item as ForSale by calling function sellItem()
-        
+        // Watch the emitted event Promoted()
+        const event = supplyChain.Promoted();
+        await event.watch((err, res) => {
+            eventEmitted = true;
+        });
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        // Mark the music as Promoted by calling function promoteMusic()
+        await supplyChain.promoteMusic(upc);
+
+        // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartTwo()
+        const result = await supplyChain.fetchmusicBufferOnePartTwo(upc);
+
+        musicState++;
 
         // Verify the result set
+        assert.equal(result[3], musicState, "Error: Invalid state");
+
+        // Verify that the event was emitted
+        assert.equal(eventEmitted, true, "Event not emitted");
           
     })    
 
     // 5th Test
-    it("Testing smart contract function buyItem() that allows a distributor to buy coffee", async() => {
+    it("Testing smart contract function distributeMusic() that allows a distributor to distribute music", async() => {
         const supplyChain = await SupplyChain.deployed()
-        
+
         // Declare and Initialize a variable for event
-        
-        
-        // Watch the emitted event Sold()
-        var event = supplyChain.Sold()
-        
+        let eventEmitted = false;
 
-        // Mark an item as Sold by calling function buyItem()
-        
+        // Watch the emitted event Distributed()
+        const event = supplyChain.Distributed();
+        await event.watch((err, res) => {
+            eventEmitted = true;
+        });
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        // Mark the music as Distributed by calling function distributeMusic()
+        await supplyChain.distributeMusic(upc);
+
+        // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartTwo()
+        const result = await supplyChain.fetchmusicBufferOnePartTwo(upc);
+
+        musicState++;
 
         // Verify the result set
-        
+        assert.equal(result[3], musicState, "Error: Invalid state");
+
+        // Verify that the event was emitted
+        assert.equal(eventEmitted, true, "Event not emitted");
     })    
 
     // 6th Test
-    it("Testing smart contract function shipItem() that allows a distributor to ship coffee", async() => {
+    it("Testing smart contract function sellMusic() that allows a distributor to sell music", async() => {
         const supplyChain = await SupplyChain.deployed()
         
         // Declare and Initialize a variable for event
-        
-        
-        // Watch the emitted event Shipped()
-        
+        let eventEmitted = false;
 
-        // Mark an item as Sold by calling function shipItem()
-        
+        // Watch the emitted event ForSale()
+        const event = supplyChain.ForSale();
+        await event.watch((err, res) => {
+            eventEmitted = true;
+        });
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        // Mark the music as Distributed by calling function distributeMusic()
+        await supplyChain.sellMusic(upc,musicPrice);
+
+       // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartTwo()
+        const result = await supplyChain.fetchmusicBufferOnePartTwo(upc);
+
+        musicState++;
 
         // Verify the result set
-              
+        assert.equal(result[2], musicPrice, "Error: Invalid price");
+        assert.equal(result[3], musicState, "Error: Invalid state");
+
+        // Verify that the event was emitted
+        assert.equal(eventEmitted, true, "Event not emitted");
     })    
 
     // 7th Test
-    it("Testing smart contract function receiveItem() that allows a retailer to mark coffee received", async() => {
+    it("Testing smart contract function buyMusic() that allows a disributor to mark music as bought", async() => {
         const supplyChain = await SupplyChain.deployed()
         
         // Declare and Initialize a variable for event
-        
-        
-        // Watch the emitted event Received()
-        
+        let eventEmitted = false;
 
-        // Mark an item as Sold by calling function receiveItem()
-        
+        // Watch the emitted event ForSale()
+        const event = supplyChain.Bought();
+        await event.watch((err, res) => {
+            eventEmitted = true;
+        });
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        // Mark the music as Bought by calling function buyMusic()
+        await supplyChain.buyMusic(upc, {from: distributorID, value: musicPrice});
+
+       // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartTwo()
+        const result1 = await supplyChain.fetchmusicBufferOnePartOne(upc);
+        const result2 = await supplyChain.fetchmusicBufferOnePartOne(upc);
+        const result3 = await supplyChain.fetchmusicBufferOnePartThree(upc);
+
+        musicState++;
 
         // Verify the result set
+        assert.equal(result1[2], distributorID, "Error: Invalid owner ID");
+        assert.equal(result2[3], musicState, "Error: Invalid state");
+        assert.equal(result3[3], distributorID, "Error: Invalid distributor ID");
+
+        // Verify that the event was emitted
+        assert.equal(eventEmitted, true, "Event not emitted");
              
     })    
 
     // 8th Test
-    it("Testing smart contract function purchaseItem() that allows a consumer to purchase coffee", async() => {
+    it("Testing smart contract function listenToMusic() that allows a consumer to listen to music", async() => {
         const supplyChain = await SupplyChain.deployed()
         
         // Declare and Initialize a variable for event
+        let eventEmitted = false;
         
-        
-        // Watch the emitted event Purchased()
-        
+        // Watch the emitted event Processed()
+        const event = supplyChain.Listened();
+        await event.watch((err, res) => {
+            eventEmitted = true;
+        });
 
-        // Mark an item as Sold by calling function purchaseItem()
-        
+        // Mark the music as Listened by calling function listenToMusic()
+        await supplyChain.listenToMusic(upc);
 
-        // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        // Retrieve the just now saved item from blockchain by calling function fetchmusicBufferOnePartTwo()
+        const result = await supplyChain.fetchmusicBufferOnePartTwo(upc);
+
+        musicState++;
 
         // Verify the result set
+        assert.equal(result[3], musicState, "Error: Invalid state");
+
+        // Verify that the event was emitted
+        assert.equal(eventEmitted, true, "Event not emitted");
+        
         
     })    
 
     // 9th Test
-    it("Testing smart contract function fetchItemBufferOne() that allows anyone to fetch item details from blockchain", async() => {
+    it("Testing smart contract function fetchItemBufferOne() that allows anyone to fetch details from blockchain", async() => {
         const supplyChain = await SupplyChain.deployed()
 
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        const result = await supplyChain.fetchItemBufferOne();
         
         // Verify the result set:
+        assert.equal(result[0], sku, "Error: Invalid SKU");
+        assert.equal(result[1], upc, "Error: Invalid UPC");
+        assert.equal(result[2], ownerID, "Error: Invalid Owner ID");
+        assert.equal(result[3], originArtistID, "Error: Invalid Artist ID");
         
     })
 
     // 10th Test
-    it("Testing smart contract function fetchItemBufferTwo() that allows anyone to fetch item details from blockchain", async() => {
+    it("Testing smart contract function fetchItemBufferTwo() that allows anyone to fetch details from blockchain", async() => {
         const supplyChain = await SupplyChain.deployed()
 
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        const result = await supplyChain.fetchItemBufferTwo();
         
         // Verify the result set:
+        assert.equal(result[0], sku, "Error: Invalid SKU");
+        assert.equal(result[1], upc, "Error: Invalid UPC");
+        assert.equal(result[2], musicPrice, "Error: Invalid music price");
+        assert.equal(result[3], musicState, "Error: Invalid music state");
+        assert.equal(result[4], musicID, "Error: Invalid music ID");
+        assert.equal(result[5], musicNotes, "Error: Invalid music notes");
+    })
+
+    // 12th Test
+    it("Testing smart contract function fetchItemBufferThree() that allows anyone to fetch details from blockchain", async() => {
+        const supplyChain = await SupplyChain.deployed()
+
+       // Retrieve the just now saved item from blockchain by calling function fetchItem()
+        const result = await supplyChain.fetchItemBufferThree();
         
+        // Verify the result set:
+        assert.equal(result[0], sku, "Error: Invalid SKU");
+        assert.equal(result[1], upc, "Error: Invalid UPC");
+        assert.equal(result[2], distributorID, "Error: Invalid distributorID");
+        assert.equal(result[3], recordLabelID, "Error: Invalid recordLabelID");
+        assert.equal(result[4], consumerID, "Error: Invalid consumerID");
     })
 
 });
