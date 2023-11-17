@@ -1,0 +1,2689 @@
+{
+  "contractName": "RecordLabelRole",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "RecordLabelAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "RecordLabelRemoved",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isRecordLabel",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addRecordLabel",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceRecordLabel",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addRecordLabel\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isRecordLabel\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceRecordLabel\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RecordLabelAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RecordLabelRemoved\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/musicaccesscontrol/RecordLabelRole.sol\":\"RecordLabelRole\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/musicaccesscontrol/RecordLabelRole.sol\":{\"keccak256\":\"0x97bc08ad11ac88375b9c13fa2c20fc7b795947eb98c7b99cc6d9b53155581a1e\",\"urls\":[\"bzzr://e0061546f282b7c9cef89af0d1bb88027408704563c3e52cad2d766610ee8ff6\"]},\"project:/contracts/musicaccesscontrol/Roles.sol\":{\"keccak256\":\"0xe21510b1682b09db6e084f37f3827a41e8cf1d665211f272188ea18a1ba39744\",\"urls\":[\"bzzr://1a0a468468ff1514572ccd790902c7754900ca01df191cd4d713a7a592ef6bd3\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506100293361002e640100000000026401000000009004565b6101e8565b61004f816000610095640100000000026102a1179091906401000000009004565b8073ffffffffffffffffffffffffffffffffffffffff167f4ecfa6033e9d0c710259da17faebbf4d5dcc3795adef7258f16a21a6fdfa673860405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156100d157600080fd5b6100ea8282610154640100000000026401000000009004565b1515156100f657600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561019157600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61042c806101f76000396000f300608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636a44c0601461005c578063c75f5fd61461009f578063e0e03563146100fa575b600080fd5b34801561006857600080fd5b5061009d600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610111565b005b3480156100ab57600080fd5b506100e0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610131565b604051808215151515815260200191505060405180910390f35b34801561010657600080fd5b5061010f61014e565b005b61011a33610131565b151561012557600080fd5b61012e81610159565b50565b60006101478260006101b390919063ffffffff16565b9050919050565b61015733610247565b565b61016d8160006102a190919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f4ecfa6033e9d0c710259da17faebbf4d5dcc3795adef7258f16a21a6fdfa673860405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156101f057600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61025b81600061035190919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f7b5772243b6612a540480cdb8fe68ea0f96eb02d8ff6beb43fca694986dcadaa60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156102dd57600080fd5b6102e782826101b3565b1515156102f357600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561038d57600080fd5b61039782826101b3565b15156103a257600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050505600a165627a7a72305820f0dc4d120701b6d0318e8e29eaf2a9775946392f991ec3431305119c2495b36f0029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636a44c0601461005c578063c75f5fd61461009f578063e0e03563146100fa575b600080fd5b34801561006857600080fd5b5061009d600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610111565b005b3480156100ab57600080fd5b506100e0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610131565b604051808215151515815260200191505060405180910390f35b34801561010657600080fd5b5061010f61014e565b005b61011a33610131565b151561012557600080fd5b61012e81610159565b50565b60006101478260006101b390919063ffffffff16565b9050919050565b61015733610247565b565b61016d8160006102a190919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f4ecfa6033e9d0c710259da17faebbf4d5dcc3795adef7258f16a21a6fdfa673860405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156101f057600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61025b81600061035190919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f7b5772243b6612a540480cdb8fe68ea0f96eb02d8ff6beb43fca694986dcadaa60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156102dd57600080fd5b6102e782826101b3565b1515156102f357600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561038d57600080fd5b61039782826101b3565b15156103a257600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050505600a165627a7a72305820f0dc4d120701b6d0318e8e29eaf2a9775946392f991ec3431305119c2495b36f0029",
+  "sourceMap": "159:1607:3:-;;;593:59;8:9:-1;5:2;;;30:1;27;20:12;5:2;593:59:3;620:27;636:10;620:15;;;:27;;;:::i;:::-;159:1607;;1401:123;1458:25;1475:7;1458:12;:16;;;;;;:25;;;;;:::i;:::-;1511:7;1494:25;;;;;;;;;;;;1401:123;:::o;244:167:4:-;335:1;316:21;;:7;:21;;;;308:30;;;;;;;;353:18;357:4;363:7;353:3;;;:18;;;:::i;:::-;352:19;344:28;;;;;;;;402:4;379;:11;;:20;391:7;379:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;244:167;;:::o;725:166::-;809:4;850:1;831:21;;:7;:21;;;;823:30;;;;;;;;866:4;:11;;:20;878:7;866:20;;;;;;;;;;;;;;;;;;;;;;;;;859:27;;725:166;;;;:::o;159:1607:3:-;;;;;;;",
+  "deployedSourceMap": "159:1607:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1052:99;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1052:99:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;878:110;;8:9:-1;5:2;;;30:1;27;20:12;5:2;878:110:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1222:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1222:79:3;;;;;;1052:99;778:25;792:10;778:13;:25::i;:::-;770:34;;;;;;;;1122:24;1138:7;1122:15;:24::i;:::-;1052:99;:::o;878:110::-;939:4;958:25;975:7;958:12;:16;;:25;;;;:::i;:::-;951:32;;878:110;;;:::o;1222:79::-;1266:30;1285:10;1266:18;:30::i;:::-;1222:79::o;1401:123::-;1458:25;1475:7;1458:12;:16;;:25;;;;:::i;:::-;1511:7;1494:25;;;;;;;;;;;;1401:123;:::o;725:166:4:-;809:4;850:1;831:21;;:7;:21;;;;823:30;;;;;;;;866:4;:11;;:20;878:7;866:20;;;;;;;;;;;;;;;;;;;;;;;;;859:27;;725:166;;;;:::o;1633:131:3:-;1693:28;1713:7;1693:12;:19;;:28;;;;:::i;:::-;1751:7;1732:27;;;;;;;;;;;;1633:131;:::o;244:167:4:-;335:1;316:21;;:7;:21;;;;308:30;;;;;;;;353:18;357:4;363:7;353:3;:18::i;:::-;352:19;344:28;;;;;;;;402:4;379;:11;;:20;391:7;379:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;244:167;;:::o;477:170::-;571:1;552:21;;:7;:21;;;;544:30;;;;;;;;588:18;592:4;598:7;588:3;:18::i;:::-;580:27;;;;;;;;637:5;614:4;:11;;:20;626:7;614:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;477:170;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\n// Import the library 'Roles'\nimport \"./Roles.sol\";\n\n// Define a contract 'RecordLabelRole' to manage this role - add, remove, check\ncontract RecordLabelRole {\n  using Roles for Roles.Role;\n\n  // Define 2 events, one for Adding, and other for Removing\n  event RecordLabelAdded(address indexed account);\n  event RecordLabelRemoved(address indexed account);\n\n  // Define a struct 'recordLabels' by inheriting from 'Roles' library, struct Role\n  Roles.Role private recordLabels;\n\n  // In the constructor make the address that deploys this contract the 1st RecordLabel\n  constructor() public {\n    _addRecordLabel(msg.sender);\n  }\n\n  // Define a modifier that checks to see if msg.sender has the appropriate role\n  modifier onlyRecordLabel() {\n    require(isRecordLabel(msg.sender));\n    _;\n  }\n\n  // Define a function 'isRecordLabel' to check this role\n  function isRecordLabel(address account) public view returns (bool) {\n    return recordLabels.has(account);\n  }\n\n  // Define a function 'addRecordLabel' that adds this role\n  function addRecordLabel(address account) public onlyRecordLabel {\n    _addRecordLabel(account);\n  }\n\n  // Define a function 'renounceRecordLabel' to renounce this role\n  function renounceRecordLabel() public {\n    _removeRecordLabel(msg.sender);\n  }\n\n  // Define an internal function '_addRecordLabel' to add this role, called by 'addRecordLabel'\n  function _addRecordLabel(address account) internal {\n    recordLabels.add(account);\n    emit RecordLabelAdded(account);\n  }\n\n  // Define an internal function '_removeRecordLabel' to remove this role, called by 'removeRecordLabel'\n  function _removeRecordLabel(address account) internal {\n    recordLabels.remove(account);\n    emit RecordLabelRemoved(account);\n  }\n}",
+  "sourcePath": "/Users/biodunerinle/Desktop/nd1309-Project-6b-Example-Template/project-6/contracts/musicaccesscontrol/RecordLabelRole.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/musicaccesscontrol/RecordLabelRole.sol",
+    "exportedSymbols": {
+      "RecordLabelRole": [
+        411
+      ]
+    },
+    "id": 412,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 310,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "project:/contracts/musicaccesscontrol/Roles.sol",
+        "file": "./Roles.sol",
+        "id": 311,
+        "nodeType": "ImportDirective",
+        "scope": 412,
+        "sourceUnit": 506,
+        "src": "56:21:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 411,
+        "linearizedBaseContracts": [
+          411
+        ],
+        "name": "RecordLabelRole",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 314,
+            "libraryName": {
+              "contractScope": null,
+              "id": 312,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 505,
+              "src": "194:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$505",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "188:27:3",
+            "typeName": {
+              "contractScope": null,
+              "id": 313,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 418,
+              "src": "204:10:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$418_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 318,
+            "name": "RecordLabelAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 317,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 316,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 318,
+                  "src": "303:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 315,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "303:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "302:25:3"
+            },
+            "src": "280:48:3"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 322,
+            "name": "RecordLabelRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 321,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 320,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 322,
+                  "src": "356:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 319,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "356:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "355:25:3"
+            },
+            "src": "331:50:3"
+          },
+          {
+            "constant": false,
+            "id": 324,
+            "name": "recordLabels",
+            "nodeType": "VariableDeclaration",
+            "scope": 411,
+            "src": "469:31:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$418_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 323,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 418,
+              "src": "469:10:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$418_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 332,
+              "nodeType": "Block",
+              "src": "614:38:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 328,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1298,
+                          "src": "636:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 329,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "636:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 327,
+                      "name": "_addRecordLabel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 394,
+                      "src": "620:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 330,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "620:27:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 331,
+                  "nodeType": "ExpressionStatement",
+                  "src": "620:27:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 333,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 325,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "604:2:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 326,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "614:0:3"
+            },
+            "scope": 411,
+            "src": "593:59:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 343,
+              "nodeType": "Block",
+              "src": "764:52:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 337,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1298,
+                              "src": "792:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 338,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "792:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 336,
+                          "name": "isRecordLabel",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 357,
+                          "src": "778:13:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 339,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "778:25:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 335,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        1301,
+                        1302
+                      ],
+                      "referencedDeclaration": 1301,
+                      "src": "770:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 340,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "770:34:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 341,
+                  "nodeType": "ExpressionStatement",
+                  "src": "770:34:3"
+                },
+                {
+                  "id": 342,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "810:1:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 344,
+            "name": "onlyRecordLabel",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 334,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "761:2:3"
+            },
+            "src": "737:79:3",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 356,
+              "nodeType": "Block",
+              "src": "945:43:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 353,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 346,
+                        "src": "975:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 351,
+                        "name": "recordLabels",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 324,
+                        "src": "958:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$418_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 352,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 504,
+                      "src": "958:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$418_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$418_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 354,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "958:25:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 350,
+                  "id": 355,
+                  "nodeType": "Return",
+                  "src": "951:32:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 357,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isRecordLabel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 347,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 346,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "901:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 345,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "901:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "900:17:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 350,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 349,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "939:4:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 348,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "939:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "938:6:3"
+            },
+            "scope": 411,
+            "src": "878:110:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 368,
+              "nodeType": "Block",
+              "src": "1116:35:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 365,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 359,
+                        "src": "1138:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 364,
+                      "name": "_addRecordLabel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 394,
+                      "src": "1122:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 366,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1122:24:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 367,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1122:24:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 369,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 362,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 361,
+                  "name": "onlyRecordLabel",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 344,
+                  "src": "1100:15:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1100:15:3"
+              }
+            ],
+            "name": "addRecordLabel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 360,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 359,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 369,
+                  "src": "1076:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 358,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1076:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1075:17:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 363,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1116:0:3"
+            },
+            "scope": 411,
+            "src": "1052:99:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 377,
+              "nodeType": "Block",
+              "src": "1260:41:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 373,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1298,
+                          "src": "1285:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 374,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1285:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 372,
+                      "name": "_removeRecordLabel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 410,
+                      "src": "1266:18:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 375,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1266:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 376,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1266:30:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 378,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "renounceRecordLabel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 370,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1250:2:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 371,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1260:0:3"
+            },
+            "scope": 411,
+            "src": "1222:79:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 393,
+              "nodeType": "Block",
+              "src": "1452:72:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 386,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 380,
+                        "src": "1475:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 383,
+                        "name": "recordLabels",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 324,
+                        "src": "1458:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$418_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 385,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 450,
+                      "src": "1458:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$418_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$418_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 387,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1458:25:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 388,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1458:25:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 390,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 380,
+                        "src": "1511:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 389,
+                      "name": "RecordLabelAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 318,
+                      "src": "1494:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 391,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1494:25:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 392,
+                  "nodeType": "EmitStatement",
+                  "src": "1489:30:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 394,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "_addRecordLabel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 381,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 380,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 394,
+                  "src": "1426:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 379,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1426:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1425:17:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 382,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1452:0:3"
+            },
+            "scope": 411,
+            "src": "1401:123:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 409,
+              "nodeType": "Block",
+              "src": "1687:77:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 402,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 396,
+                        "src": "1713:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 399,
+                        "name": "recordLabels",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 324,
+                        "src": "1693:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$418_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 401,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 481,
+                      "src": "1693:19:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$418_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$418_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 403,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1693:28:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 404,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1693:28:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 406,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 396,
+                        "src": "1751:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 405,
+                      "name": "RecordLabelRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 322,
+                      "src": "1732:18:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 407,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1732:27:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 408,
+                  "nodeType": "EmitStatement",
+                  "src": "1727:32:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 410,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "_removeRecordLabel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 397,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 396,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 410,
+                  "src": "1661:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 395,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1661:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1660:17:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 398,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1687:0:3"
+            },
+            "scope": 411,
+            "src": "1633:131:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 412,
+        "src": "159:1607:3"
+      }
+    ],
+    "src": "0:1766:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/musicaccesscontrol/RecordLabelRole.sol",
+      "exportedSymbols": {
+        "RecordLabelRole": [
+          411
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".24"
+          ]
+        },
+        "id": 310,
+        "name": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 506,
+          "absolutePath": "project:/contracts/musicaccesscontrol/Roles.sol",
+          "file": "./Roles.sol",
+          "scope": 412,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 311,
+        "name": "ImportDirective",
+        "src": "56:21:3"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            411
+          ],
+          "name": "RecordLabelRole",
+          "scope": 412
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Roles",
+                  "referencedDeclaration": 505,
+                  "type": "library Roles"
+                },
+                "id": 312,
+                "name": "UserDefinedTypeName",
+                "src": "194:5:3"
+              },
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Roles.Role",
+                  "referencedDeclaration": 418,
+                  "type": "struct Roles.Role"
+                },
+                "id": 313,
+                "name": "UserDefinedTypeName",
+                "src": "204:10:3"
+              }
+            ],
+            "id": 314,
+            "name": "UsingForDirective",
+            "src": "188:27:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "RecordLabelAdded"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "account",
+                      "scope": 318,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 315,
+                        "name": "ElementaryTypeName",
+                        "src": "303:7:3"
+                      }
+                    ],
+                    "id": 316,
+                    "name": "VariableDeclaration",
+                    "src": "303:23:3"
+                  }
+                ],
+                "id": 317,
+                "name": "ParameterList",
+                "src": "302:25:3"
+              }
+            ],
+            "id": 318,
+            "name": "EventDefinition",
+            "src": "280:48:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "RecordLabelRemoved"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "account",
+                      "scope": 322,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 319,
+                        "name": "ElementaryTypeName",
+                        "src": "356:7:3"
+                      }
+                    ],
+                    "id": 320,
+                    "name": "VariableDeclaration",
+                    "src": "356:23:3"
+                  }
+                ],
+                "id": 321,
+                "name": "ParameterList",
+                "src": "355:25:3"
+              }
+            ],
+            "id": 322,
+            "name": "EventDefinition",
+            "src": "331:50:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "recordLabels",
+              "scope": 411,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct Roles.Role",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Roles.Role",
+                  "referencedDeclaration": 418,
+                  "type": "struct Roles.Role"
+                },
+                "id": 323,
+                "name": "UserDefinedTypeName",
+                "src": "469:10:3"
+              }
+            ],
+            "id": 324,
+            "name": "VariableDeclaration",
+            "src": "469:31:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "payable": false,
+              "scope": 411,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 325,
+                "name": "ParameterList",
+                "src": "604:2:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 326,
+                "name": "ParameterList",
+                "src": "614:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 394,
+                              "type": "function (address)",
+                              "value": "_addRecordLabel"
+                            },
+                            "id": 327,
+                            "name": "Identifier",
+                            "src": "620:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1298,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 328,
+                                "name": "Identifier",
+                                "src": "636:3:3"
+                              }
+                            ],
+                            "id": 329,
+                            "name": "MemberAccess",
+                            "src": "636:10:3"
+                          }
+                        ],
+                        "id": 330,
+                        "name": "FunctionCall",
+                        "src": "620:27:3"
+                      }
+                    ],
+                    "id": 331,
+                    "name": "ExpressionStatement",
+                    "src": "620:27:3"
+                  }
+                ],
+                "id": 332,
+                "name": "Block",
+                "src": "614:38:3"
+              }
+            ],
+            "id": 333,
+            "name": "FunctionDefinition",
+            "src": "593:59:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "name": "onlyRecordLabel",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 334,
+                "name": "ParameterList",
+                "src": "761:2:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                1301,
+                                1302
+                              ],
+                              "referencedDeclaration": 1301,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 335,
+                            "name": "Identifier",
+                            "src": "770:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 357,
+                                  "type": "function (address) view returns (bool)",
+                                  "value": "isRecordLabel"
+                                },
+                                "id": 336,
+                                "name": "Identifier",
+                                "src": "778:13:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1298,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 337,
+                                    "name": "Identifier",
+                                    "src": "792:3:3"
+                                  }
+                                ],
+                                "id": 338,
+                                "name": "MemberAccess",
+                                "src": "792:10:3"
+                              }
+                            ],
+                            "id": 339,
+                            "name": "FunctionCall",
+                            "src": "778:25:3"
+                          }
+                        ],
+                        "id": 340,
+                        "name": "FunctionCall",
+                        "src": "770:34:3"
+                      }
+                    ],
+                    "id": 341,
+                    "name": "ExpressionStatement",
+                    "src": "770:34:3"
+                  },
+                  {
+                    "id": 342,
+                    "name": "PlaceholderStatement",
+                    "src": "810:1:3"
+                  }
+                ],
+                "id": 343,
+                "name": "Block",
+                "src": "764:52:3"
+              }
+            ],
+            "id": 344,
+            "name": "ModifierDefinition",
+            "src": "737:79:3"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "isRecordLabel",
+              "payable": false,
+              "scope": 411,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 357,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 345,
+                        "name": "ElementaryTypeName",
+                        "src": "901:7:3"
+                      }
+                    ],
+                    "id": 346,
+                    "name": "VariableDeclaration",
+                    "src": "901:15:3"
+                  }
+                ],
+                "id": 347,
+                "name": "ParameterList",
+                "src": "900:17:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 357,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 348,
+                        "name": "ElementaryTypeName",
+                        "src": "939:4:3"
+                      }
+                    ],
+                    "id": 349,
+                    "name": "VariableDeclaration",
+                    "src": "939:4:3"
+                  }
+                ],
+                "id": 350,
+                "name": "ParameterList",
+                "src": "938:6:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 350
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "bool",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "has",
+                              "referencedDeclaration": 504,
+                              "type": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 324,
+                                  "type": "struct Roles.Role storage ref",
+                                  "value": "recordLabels"
+                                },
+                                "id": 351,
+                                "name": "Identifier",
+                                "src": "958:12:3"
+                              }
+                            ],
+                            "id": 352,
+                            "name": "MemberAccess",
+                            "src": "958:16:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 346,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 353,
+                            "name": "Identifier",
+                            "src": "975:7:3"
+                          }
+                        ],
+                        "id": 354,
+                        "name": "FunctionCall",
+                        "src": "958:25:3"
+                      }
+                    ],
+                    "id": 355,
+                    "name": "Return",
+                    "src": "951:32:3"
+                  }
+                ],
+                "id": 356,
+                "name": "Block",
+                "src": "945:43:3"
+              }
+            ],
+            "id": 357,
+            "name": "FunctionDefinition",
+            "src": "878:110:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "name": "addRecordLabel",
+              "payable": false,
+              "scope": 411,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 369,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 358,
+                        "name": "ElementaryTypeName",
+                        "src": "1076:7:3"
+                      }
+                    ],
+                    "id": 359,
+                    "name": "VariableDeclaration",
+                    "src": "1076:15:3"
+                  }
+                ],
+                "id": 360,
+                "name": "ParameterList",
+                "src": "1075:17:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 363,
+                "name": "ParameterList",
+                "src": "1116:0:3"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 344,
+                      "type": "modifier ()",
+                      "value": "onlyRecordLabel"
+                    },
+                    "id": 361,
+                    "name": "Identifier",
+                    "src": "1100:15:3"
+                  }
+                ],
+                "id": 362,
+                "name": "ModifierInvocation",
+                "src": "1100:15:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 394,
+                              "type": "function (address)",
+                              "value": "_addRecordLabel"
+                            },
+                            "id": 364,
+                            "name": "Identifier",
+                            "src": "1122:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 359,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 365,
+                            "name": "Identifier",
+                            "src": "1138:7:3"
+                          }
+                        ],
+                        "id": 366,
+                        "name": "FunctionCall",
+                        "src": "1122:24:3"
+                      }
+                    ],
+                    "id": 367,
+                    "name": "ExpressionStatement",
+                    "src": "1122:24:3"
+                  }
+                ],
+                "id": 368,
+                "name": "Block",
+                "src": "1116:35:3"
+              }
+            ],
+            "id": 369,
+            "name": "FunctionDefinition",
+            "src": "1052:99:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "renounceRecordLabel",
+              "payable": false,
+              "scope": 411,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 370,
+                "name": "ParameterList",
+                "src": "1250:2:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 371,
+                "name": "ParameterList",
+                "src": "1260:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 410,
+                              "type": "function (address)",
+                              "value": "_removeRecordLabel"
+                            },
+                            "id": 372,
+                            "name": "Identifier",
+                            "src": "1266:18:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1298,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 373,
+                                "name": "Identifier",
+                                "src": "1285:3:3"
+                              }
+                            ],
+                            "id": 374,
+                            "name": "MemberAccess",
+                            "src": "1285:10:3"
+                          }
+                        ],
+                        "id": 375,
+                        "name": "FunctionCall",
+                        "src": "1266:30:3"
+                      }
+                    ],
+                    "id": 376,
+                    "name": "ExpressionStatement",
+                    "src": "1266:30:3"
+                  }
+                ],
+                "id": 377,
+                "name": "Block",
+                "src": "1260:41:3"
+              }
+            ],
+            "id": 378,
+            "name": "FunctionDefinition",
+            "src": "1222:79:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "_addRecordLabel",
+              "payable": false,
+              "scope": 411,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 394,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 379,
+                        "name": "ElementaryTypeName",
+                        "src": "1426:7:3"
+                      }
+                    ],
+                    "id": 380,
+                    "name": "VariableDeclaration",
+                    "src": "1426:15:3"
+                  }
+                ],
+                "id": 381,
+                "name": "ParameterList",
+                "src": "1425:17:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 382,
+                "name": "ParameterList",
+                "src": "1452:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "add",
+                              "referencedDeclaration": 450,
+                              "type": "function (struct Roles.Role storage pointer,address)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 324,
+                                  "type": "struct Roles.Role storage ref",
+                                  "value": "recordLabels"
+                                },
+                                "id": 383,
+                                "name": "Identifier",
+                                "src": "1458:12:3"
+                              }
+                            ],
+                            "id": 385,
+                            "name": "MemberAccess",
+                            "src": "1458:16:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 380,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 386,
+                            "name": "Identifier",
+                            "src": "1475:7:3"
+                          }
+                        ],
+                        "id": 387,
+                        "name": "FunctionCall",
+                        "src": "1458:25:3"
+                      }
+                    ],
+                    "id": 388,
+                    "name": "ExpressionStatement",
+                    "src": "1458:25:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 318,
+                              "type": "function (address)",
+                              "value": "RecordLabelAdded"
+                            },
+                            "id": 389,
+                            "name": "Identifier",
+                            "src": "1494:16:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 380,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 390,
+                            "name": "Identifier",
+                            "src": "1511:7:3"
+                          }
+                        ],
+                        "id": 391,
+                        "name": "FunctionCall",
+                        "src": "1494:25:3"
+                      }
+                    ],
+                    "id": 392,
+                    "name": "EmitStatement",
+                    "src": "1489:30:3"
+                  }
+                ],
+                "id": 393,
+                "name": "Block",
+                "src": "1452:72:3"
+              }
+            ],
+            "id": 394,
+            "name": "FunctionDefinition",
+            "src": "1401:123:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "_removeRecordLabel",
+              "payable": false,
+              "scope": 411,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 410,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 395,
+                        "name": "ElementaryTypeName",
+                        "src": "1661:7:3"
+                      }
+                    ],
+                    "id": 396,
+                    "name": "VariableDeclaration",
+                    "src": "1661:15:3"
+                  }
+                ],
+                "id": 397,
+                "name": "ParameterList",
+                "src": "1660:17:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 398,
+                "name": "ParameterList",
+                "src": "1687:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "remove",
+                              "referencedDeclaration": 481,
+                              "type": "function (struct Roles.Role storage pointer,address)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 324,
+                                  "type": "struct Roles.Role storage ref",
+                                  "value": "recordLabels"
+                                },
+                                "id": 399,
+                                "name": "Identifier",
+                                "src": "1693:12:3"
+                              }
+                            ],
+                            "id": 401,
+                            "name": "MemberAccess",
+                            "src": "1693:19:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 396,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 402,
+                            "name": "Identifier",
+                            "src": "1713:7:3"
+                          }
+                        ],
+                        "id": 403,
+                        "name": "FunctionCall",
+                        "src": "1693:28:3"
+                      }
+                    ],
+                    "id": 404,
+                    "name": "ExpressionStatement",
+                    "src": "1693:28:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 322,
+                              "type": "function (address)",
+                              "value": "RecordLabelRemoved"
+                            },
+                            "id": 405,
+                            "name": "Identifier",
+                            "src": "1732:18:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 396,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 406,
+                            "name": "Identifier",
+                            "src": "1751:7:3"
+                          }
+                        ],
+                        "id": 407,
+                        "name": "FunctionCall",
+                        "src": "1732:27:3"
+                      }
+                    ],
+                    "id": 408,
+                    "name": "EmitStatement",
+                    "src": "1727:32:3"
+                  }
+                ],
+                "id": 409,
+                "name": "Block",
+                "src": "1687:77:3"
+              }
+            ],
+            "id": 410,
+            "name": "FunctionDefinition",
+            "src": "1633:131:3"
+          }
+        ],
+        "id": 411,
+        "name": "ContractDefinition",
+        "src": "159:1607:3"
+      }
+    ],
+    "id": 412,
+    "name": "SourceUnit",
+    "src": "0:1766:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xab975d6F20Cc997D46f6525ed04F0bBB81dA7921",
+      "transactionHash": "0xae13876db13142660aa59f6f4ba33cbd9a4618fcb4dd531d80eb93e13e4514c6"
+    },
+    "11155111": {
+      "events": {},
+      "links": {},
+      "address": "0x6f4fC84cd223EaD73ea040e5025156C3fE18D7C7",
+      "transactionHash": "0x8b723dc14985eb8ebf1b356476b53c232479f3c8f5cc9f97ba8b9670c04dae46"
+    }
+  },
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2023-11-17T03:02:02.423Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
