@@ -304,7 +304,7 @@ contract SupplyChain is ArtistRole, RecordLabelRole, DistributorRole, ConsumerRo
         uint    musicSKU,
         uint    musicUPC,
         address ownerID,
-        address ArtistID
+        address artistID
     ) {
         Music memory m = music[_upc];
         return (
