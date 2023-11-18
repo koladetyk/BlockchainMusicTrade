@@ -12,7 +12,7 @@ App = {
     recordLabelID: "0x0000000000000000000000000000000000000000",
     consumerID: "0x0000000000000000000000000000000000000000",
     musicID: 0,
-    musicNotes: null,
+    musicNotes: "notes",
 
     init: async function () {
         App.readForm();
@@ -170,7 +170,8 @@ App = {
                 App.upc, 
                 App.metamaskAccountID, 
                 App.musicID, 
-                App.musicNotes
+                App.musicNotes,
+                { from: App.metamaskAccountID }
             );
         }).then(function(result) {
             $("#ftc-item").text(result);
@@ -189,6 +190,20 @@ App = {
         }).then(function(result) {
             $("#ftc-item").text(result);
             console.log('registerMusic',result);
+        }).catch(function(err) {
+            console.log(err.message);
+        });
+    },
+
+    verifyMusic: function (event) {
+        event.preventDefault();
+        var processId = parseInt($(event.target).data('id'));
+
+        App.contracts.SupplyChain.deployed().then(function(instance) {
+            return instance.verifyMusic(App.upc, {from: App.metamaskAccountID});
+        }).then(function(result) {
+            $("#ftc-item").text(result);
+            console.log('verifyMusic',result);
         }).catch(function(err) {
             console.log(err.message);
         });
